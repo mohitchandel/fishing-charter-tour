@@ -1,18 +1,19 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { MotionConfig } from "motion/react";
 import { ReactLenis } from "lenis/react";
-import { Preloader } from "./preloader";
 
-const IntroContext = createContext(false);
+/**
+ * Entrance animations wait on this flag. There's no intro loader at the
+ * moment, so it's always true and they play as soon as the page hydrates.
+ * Bring back a loader by toggling it from a provider again.
+ */
+const IntroContext = createContext(true);
 
-/** True once the intro loader has finished and the page is revealed. */
 export const useIntroDone = () => useContext(IntroContext);
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  const [introDone, setIntroDone] = useState(false);
-
   return (
     <ReactLenis
       root
@@ -24,10 +25,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       }}
     >
       <MotionConfig reducedMotion="user">
-        <IntroContext.Provider value={introDone}>
-          <Preloader onDone={() => setIntroDone(true)} />
-          {children}
-        </IntroContext.Provider>
+        {children}
       </MotionConfig>
     </ReactLenis>
   );

@@ -34,10 +34,8 @@ export function SiteHeader() {
     >
       <div className="container-luxe flex h-[72px] items-center justify-between gap-6">
         <Link href="/" aria-label={`${site.name}, home`} className="flex items-baseline gap-2">
-          <span className="text-lg font-medium tracking-[0.32em]">SALTLINE</span>
-          <span className={cn("hidden font-serif text-lg italic sm:inline", solid ? "text-brass" : "text-brass-soft")}>
-            charters
-          </span>
+          <span className="text-lg font-medium tracking-[0.32em]">HOOKED</span>
+          <span className={cn("font-serif text-lg italic", solid ? "text-brass" : "text-brass-soft")}>on tours</span>
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-9 lg:flex">
@@ -77,7 +75,10 @@ export function SiteHeader() {
             >
               <SheetTitle className="sr-only">Menu</SheetTitle>
               <div className="container-luxe flex h-[72px] items-center justify-between">
-                <span className="text-lg font-medium tracking-[0.32em]">SALTLINE</span>
+                <span className="flex items-baseline gap-2">
+                  <span className="text-lg font-medium tracking-[0.32em]">HOOKED</span>
+                  <span className="font-serif text-lg text-brass-soft italic">on tours</span>
+                </span>
                 <SheetClose className="label h-11">Close</SheetClose>
               </div>
               <nav aria-label="Mobile" className="container-luxe mt-8 flex flex-col">

@@ -5,7 +5,7 @@ import { animate, AnimatePresence, motion, useReducedMotion } from "motion/react
 import { useLenis } from "lenis/react";
 
 const ease = [0.76, 0, 0.24, 1] as const;
-const word = "SALTLINE".split("");
+const word = "HOOKED".split("");
 
 /**
  * Full-screen intro shown on the first page load: a counter runs 0→100 while
@@ -67,6 +67,15 @@ export function Preloader({ onDone }: { onDone: () => void }) {
                   {ch}
                 </motion.span>
               ))}
+              <motion.span
+                className="ml-[0.18em] inline-block self-end pb-[0.12em] font-serif text-[0.38em] tracking-normal text-brass-soft italic"
+                initial={{ y: "105%", opacity: 0 }}
+                animate={{ y: "0%", opacity: 1 }}
+                exit={{ y: "-105%", opacity: 0, transition: { duration: 0.6, ease } }}
+                transition={{ duration: 1.1, ease, delay: 0.5 }}
+              >
+                on tours
+              </motion.span>
             </p>
             <p className="pb-2 font-serif text-5xl text-brass-soft tabular-nums italic md:text-7xl">
               {String(count).padStart(3, "0")}

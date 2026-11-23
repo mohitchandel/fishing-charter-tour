@@ -1,4 +1,4 @@
-# Saltline Charters (fishing charters website)
+# Hooked on Tours (fishing charters guide website)
 
 Marketing site for a Key West fishing charter business.
 Stack: Next.js 16 (App Router, TypeScript), Tailwind CSS 4, shadcn/ui (Base UI), Motion.

@@ -70,9 +70,9 @@ export function SiteFooter() {
       </div>
       <p
         aria-hidden
-        className="-mb-[3.5vw] text-center text-[21vw] leading-[0.8] font-light tracking-[-0.065em] whitespace-nowrap text-bone/[0.07] select-none"
+        className="-mb-[2vw] text-center text-[10.5vw] leading-[0.8] font-light tracking-[-0.05em] whitespace-nowrap text-bone/[0.07] select-none"
       >
-        SALTLINE
+        HOOKED ON TOURS
       </p>
     </footer>
   );

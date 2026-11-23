@@ -7,13 +7,13 @@ const unsplash = (id: string, w = 1600) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
 
 export const site = {
-  name: "Saltline",
+  name: "Hooked on Tours",
   tagline: "Key West fishing charters, handpicked",
   description:
     "An independent guide to the best fishing charters in Key West. We ride along, vet the captains and list only the trips we'd book ourselves. Book securely on Viator at the same price.",
   phone: "+1 (305) 555-0142",
   phoneHref: "tel:+13055550142",
-  email: "hello@saltline.guide",
+  email: "hello@hookedontours.com",
   address: "Key West, Florida",
   hours: "Questions answered daily, 8:00 am – 8:00 pm",
   social: {
@@ -25,7 +25,7 @@ export const site = {
   heroVideo: "https://assets.mixkit.co/videos/8680/8680-720.mp4",
   heroImage: unsplash("1545647274-96644da34363", 2400),
   disclosure:
-    "Saltline is an independent guide, not a charter operator. Trips are run by the licensed captains listed on each page and booked through Viator. We earn a commission from Viator when you book, at no extra cost to you.",
+    "Hooked on Tours is an independent guide, not a charter operator. Trips are run by the licensed captains listed on each page and booked through Viator. We earn a commission from Viator when you book, at no extra cost to you.",
 };
 
 /**
@@ -196,7 +196,7 @@ export const stats = [
 
 /** What a charter has to clear before we list it. */
 export const criteria = [
-  { title: "We've been aboard", body: "Someone from Saltline has fished every trip we list, as a paying guest, without telling the crew." },
+  { title: "We've been aboard", body: "Someone from Hooked on Tours has fished every trip we list, as a paying guest, without telling the crew." },
   { title: "Licensed & insured", body: "USCG-licensed captain, current insurance and safety gear for every age, checked every season." },
   { title: "Proven by guests", body: "A rating of 4.8 or better across at least 200 verified reviews, and we read the bad ones too." },
   { title: "Fair, clear pricing", body: "Tackle, bait, ice and licences included. No surprise fuel charges at the dock." },
@@ -282,7 +282,7 @@ export const dayAboard = [
 export const faqs = [
   {
     q: "Who actually runs the trip?",
-    a: "An independent, USCG-licensed charter company. Each trip page names the operator, captain, boat and marina. Saltline is a guide: we choose the charters and help you pick, but we don't own boats or employ captains.",
+    a: "An independent, USCG-licensed charter company. Each trip page names the operator, captain, boat and marina. Hooked on Tours is a guide: we choose the charters and help you pick, but we don't own boats or employ captains.",
   },
   {
     q: "Who do I pay, and does it cost more through you?",

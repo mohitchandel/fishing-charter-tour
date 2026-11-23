@@ -17,7 +17,7 @@ export function IntroSection() {
   return (
     <section ref={ref} id="experience" className="relative overflow-hidden py-28 md:py-44">
       <div className="container-luxe">
-        <SectionLabel index="01">Why Saltline</SectionLabel>
+        <SectionLabel index="01">Why Hooked on Tours</SectionLabel>
 
         <div className="relative mt-14 md:mt-20">
           <ScrollWords

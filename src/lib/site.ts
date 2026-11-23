@@ -43,6 +43,12 @@ export const viator = {
   scriptSrc: "https://www.viator.com/orion/partner/widget.js",
 };
 
+/** Umami analytics (self-hosted). */
+export const analytics = {
+  umamiSrc: "https://tour-hub-analytics.vercel.app/script.js",
+  umamiWebsiteId: "915caedb-8ac4-4cdc-9745-aacf946df99b",
+};
+
 export type Operator = {
   name: string;
   captain: string;

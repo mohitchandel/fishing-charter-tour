@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Inter_Tight, Instrument_Serif } from "next/font/google";
-import { site } from "@/lib/site";
+import { analytics, site } from "@/lib/site";
 import { Providers } from "@/components/site/providers";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
@@ -48,6 +49,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main id="main">{children}</main>
           <SiteFooter />
         </Providers>
+        {/* Umami analytics, loaded after hydration so it never blocks the page. */}
+        <Script src={analytics.umamiSrc} data-website-id={analytics.umamiWebsiteId} strategy="afterInteractive" />
       </body>
     </html>
   );

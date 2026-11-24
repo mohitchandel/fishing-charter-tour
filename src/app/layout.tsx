@@ -17,14 +17,13 @@ const serif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Key West fishing charter guide`,
+    default: `${site.name} | Handpicked Key West fishing charters`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
   openGraph: {
-    title: `${site.name} | Key West fishing charter guide`,
+    title: `${site.name} | Handpicked Key West fishing charters`,
     description: site.description,
     images: [site.heroImage],
     type: "website",

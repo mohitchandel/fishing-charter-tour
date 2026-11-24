@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { legalNav, nav, site, trips } from "@/lib/site";
+import { nav, site, trips } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -9,10 +9,10 @@ export function SiteFooter() {
           <div className="md:col-span-7">
             <p className="label text-bone/60">Plan your day</p>
             <Link
-              href="/guides"
+              href="/#book"
               className="group mt-6 block text-[clamp(2.5rem,6vw,6rem)] leading-[0.95] font-light tracking-[-0.045em]"
             >
-              Read the guides{" "}
+              Reserve a charter{" "}
               <span className="inline-block font-serif text-brass-soft italic transition-transform duration-700 ease-luxe group-hover:translate-x-4">
                 →
               </span>
@@ -20,7 +20,7 @@ export function SiteFooter() {
           </div>
           <div className="grid grid-cols-2 gap-10 text-sm md:col-span-5 md:grid-cols-3">
             <div>
-              <p className="label text-bone/50">Trip types</p>
+              <p className="label text-bone/50">Charters</p>
               <ul className="mt-5 space-y-3">
                 {trips.map((t) => (
                   <li key={t.slug}>
@@ -44,22 +44,19 @@ export function SiteFooter() {
               </ul>
             </div>
             <div className="col-span-2 md:col-span-1">
-              <p className="label text-bone/50">The small print</p>
-              <ul className="mt-5 space-y-3">
-                {legalNav.map((n) => (
-                  <li key={n.href}>
-                    <Link href={n.href} className="text-bone/80 transition-colors hover:text-bone">
-                      {n.label}
-                    </Link>
-                  </li>
-                ))}
-                {site.email && (
-                  <li>
-                    <a href={`mailto:${site.email}`} className="break-all text-bone/80 transition-colors hover:text-bone">
-                      {site.email}
-                    </a>
-                  </li>
-                )}
+              <p className="label text-bone/50">Contact</p>
+              <ul className="mt-5 space-y-3 text-bone/80">
+                <li>
+                  <a href={site.phoneHref} className="transition-colors hover:text-bone">
+                    {site.phone}
+                  </a>
+                </li>
+                <li>
+                  <a href={`mailto:${site.email}`} className="break-all transition-colors hover:text-bone">
+                    {site.email}
+                  </a>
+                </li>
+                <li>{site.hours}</li>
               </ul>
             </div>
           </div>
@@ -68,7 +65,7 @@ export function SiteFooter() {
         <p className="mt-20 max-w-2xl text-sm leading-relaxed text-bone/50">{site.disclosure}</p>
         <div className="label mt-8 flex flex-wrap justify-between gap-4 border-t border-bone/15 py-6 text-bone/50">
           <span>© 2026 {site.name}</span>
-          <span>A guide to Key West, Florida</span>
+          <span>Key West, Florida · 24.5551° N, 81.7800° W</span>
         </div>
       </div>
       <p

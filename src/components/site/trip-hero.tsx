@@ -15,7 +15,7 @@ export function TripHero({ trip, index }: { trip: Trip; index: number }) {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <section ref={ref} data-hero className="relative isolate flex h-[88svh] min-h-[560px] items-end overflow-hidden bg-ink text-bone">
+    <section ref={ref} className="relative isolate flex h-[88svh] min-h-[560px] items-end overflow-hidden bg-ink text-bone">
       <motion.div style={{ y }} className="absolute inset-0 -z-10">
         <motion.div
           className="absolute inset-0"
@@ -33,12 +33,12 @@ export function TripHero({ trip, index }: { trip: Trip; index: number }) {
       <div className="container-luxe pb-12 md:pb-16">
         <FadeIn afterIntro delay={0.2} y={12}>
           <Link href="/#trips" className="label inline-flex items-center gap-3 text-bone/85 transition-colors hover:text-bone">
-            ← All trip types
+            ← All charters
           </Link>
         </FadeIn>
         <div className="mt-8 flex flex-wrap items-end justify-between gap-8">
           <div>
-            <p className="label text-bone/80"><span className="mr-3 font-serif text-2xl tracking-normal normal-case text-brass-soft italic">0{index + 1}</span>{trip.duration}</p>
+            <p className="label text-bone/80"><span className="mr-3 font-serif text-2xl tracking-normal normal-case text-brass-soft italic">0{index + 1}</span>{trip.operator.name} · {trip.operator.captain}</p>
             <SplitText
               as="h1"
               afterIntro

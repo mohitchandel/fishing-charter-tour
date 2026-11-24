@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
-import { trips } from "@/lib/site";
+import { formatPrice, trips } from "@/lib/site";
 import { ease, FadeIn, SplitText } from "./motion";
 import { SectionLabel } from "./section-label";
 
@@ -21,7 +21,7 @@ export function ChartersSection() {
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
             <SectionLabel index="02" className="text-bone/70">
-              Trip types
+              The charters
             </SectionLabel>
             <SplitText
               as="h2"
@@ -31,8 +31,8 @@ export function ChartersSection() {
           </div>
           <FadeIn className="md:col-span-4 md:col-start-9">
             <p className="max-w-sm leading-relaxed text-bone/70">
-              These are types of trip, not adverts for a boat. Each page covers who it suits, what you may
-              catch and what to ask.
+              Four private trips from four independent captains, each one ridden and vetted by us.
+              Rates are per boat and include tackle, bait and licences.
             </p>
           </FadeIn>
         </div>
@@ -60,11 +60,14 @@ export function ChartersSection() {
                 <span className="col-span-10 text-[clamp(1.9rem,4.4vw,4.25rem)] leading-none font-light tracking-[-0.04em] transition-transform duration-700 ease-luxe md:col-span-6 md:group-hover:translate-x-4">
                   {t.name}
                 </span>
-                <span className="label col-span-10 col-start-3 text-bone/60 md:col-span-2 md:col-start-auto">
-                  {t.duration}
+                <span className="label col-span-6 col-start-3 text-bone/60 md:col-span-2 md:col-start-auto">
+                  {t.duration} · {t.operator.captain}
                 </span>
-                <span className="col-span-10 col-start-3 flex items-baseline justify-between gap-6 text-bone/70 md:col-span-3 md:col-start-auto">
-                  <span className="text-sm">{t.water}</span>
+                <span className="col-span-4 flex items-baseline justify-end gap-6 text-right md:col-span-3">
+                  <span>
+                    <span className="label mr-2 text-bone/50">from</span>
+                    <span className="text-2xl font-light md:text-3xl">{formatPrice(t.priceFrom)}</span>
+                  </span>
                   <span className="hidden size-11 shrink-0 place-items-center rounded-full border border-bone/30 transition-all duration-500 group-hover:border-bone group-hover:bg-bone group-hover:text-ink md:grid">
                     →
                   </span>

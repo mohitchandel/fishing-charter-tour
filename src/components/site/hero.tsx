@@ -18,7 +18,8 @@ export function Hero() {
   const fade = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={ref} className="relative isolate h-[100svh] min-h-[640px] overflow-hidden bg-ink text-bone">
+    <section ref={ref} data-hero
+      className="relative isolate h-[100svh] min-h-[640px] overflow-hidden bg-ink text-bone">
       <motion.div style={{ y: imageY }} className="absolute inset-0 -z-10">
         <motion.div
           className="absolute inset-0"
@@ -64,7 +65,7 @@ export function Hero() {
         <FadeIn afterIntro delay={0.2} y={12}>
           <p className="label flex items-center gap-4 text-bone/85">
             <span className="h-px w-10 bg-brass-soft" />
-            Independent charter guide · Key West, FL
+            Independent fishing guide · Key West, FL
           </p>
         </FadeIn>
 
@@ -73,24 +74,23 @@ export function Hero() {
             as="h1"
             afterIntro
             delay={0.3}
-            text="Key West’s finest fishing charters, handpicked."
+            text="Find the right fishing trip in Key West."
             className="max-w-[16ch] text-[clamp(2.6rem,min(6vw,10svh),6.5rem)] leading-[0.95] font-light lg:col-span-8 [text-shadow:0_2px_30px_rgb(13_26_32/0.3)]"
           />
           <FadeIn afterIntro delay={0.9} className="lg:col-span-4 lg:pb-3">
             <p className="max-w-sm text-base leading-relaxed text-bone/90">
-              We ride along, vet the captains and list only the private trips we&rsquo;d book ourselves.
-              Reserve on Viator at the same price, with free cancellation.
+              Plain advice on trip types, the best months, real prices and the questions to ask before you book a boat.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-4">
               <Link
                 href="/#trips"
                 className="group inline-flex h-12 items-center gap-3 rounded-full bg-bone px-6 text-sm text-ink transition-colors hover:bg-brass-soft"
               >
-                Browse the charters
+                Compare trip types
                 <span className="transition-transform duration-500 ease-luxe group-hover:translate-x-1">→</span>
               </Link>
-              <Link href="/#how" className="border-b border-bone/40 pb-1 text-sm text-bone/90 transition-colors hover:border-bone">
-                How we choose
+              <Link href="/guides" className="border-b border-bone/40 pb-1 text-sm text-bone/90 transition-colors hover:border-bone">
+                Read the guides
               </Link>
             </div>
           </FadeIn>
@@ -98,10 +98,8 @@ export function Hero() {
 
         <FadeIn afterIntro delay={1.1} y={0}>
           <div className="label mt-10 flex items-center justify-between gap-6 border-t border-bone/20 pt-5 text-bone/75 md:mt-14">
-            <span>4 captains · 40+ vetted</span>
-            <span className="hidden sm:inline">
-              {site.rating.score} ★ · {site.rating.count.toLocaleString("en-US")} guest reviews
-            </span>
+            <span>No paid listings</span>
+            <span className="hidden sm:inline">Updated {site.updated}</span>
             <span className="flex items-center gap-3">
               Scroll
               <span className="relative block h-6 w-px overflow-hidden bg-bone/25">

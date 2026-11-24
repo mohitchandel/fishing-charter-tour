@@ -21,7 +21,7 @@ export function IntroSection() {
 
         <div className="relative mt-14 md:mt-20">
           <ScrollWords
-            text="Picking a charter in Key West is a gamble: a hundred boats, a thousand five-star photos. We fished on forty of them and kept the four we would book for our own families. Private boats, local captains, and the same price you would pay at the dock."
+            text="Booking a charter is easy to get wrong. The boats look alike online, and the best trip for a keen angler is a long day for a six-year-old. This guide helps you work out which water, which month and which kind of boat suits your group."
             className="relative z-10 mx-auto max-w-[56rem] text-center text-[clamp(1.75rem,3.6vw,3.6rem)] leading-[1.12] font-light tracking-[-0.03em]"
           />
 

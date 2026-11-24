@@ -18,7 +18,9 @@ export function SiteHeader() {
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const prev = scrollY.getPrevious() ?? 0;
-    setSolid(y > window.innerHeight * 0.85);
+    // Every page opens on a dark [data-hero] band; the bar turns solid as it leaves.
+    const hero = document.querySelector<HTMLElement>("[data-hero]")?.offsetHeight ?? 0;
+    setSolid(y > hero * 0.85);
     setHidden(y > prev && y > 320 && !open);
   });
 
@@ -49,7 +51,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/#book"
+            href="/#trips"
             className={cn(
               "hidden h-11 items-center rounded-full border px-6 text-sm transition-colors duration-300 sm:inline-flex",
               solid
@@ -57,7 +59,7 @@ export function SiteHeader() {
                 : "border-bone/50 hover:border-bone hover:bg-bone hover:text-ink",
             )}
           >
-            Reserve a charter
+            Plan a trip
           </Link>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -95,15 +97,12 @@ export function SiteHeader() {
                 ))}
               </nav>
               <div className="container-luxe mt-auto flex flex-col gap-3 pb-10">
-                <a href={site.phoneHref} className="label text-bone/70">
-                  {site.phone}
-                </a>
                 <SheetClose
-                  render={<Link href="/#book" />}
+                  render={<Link href="/#trips" />}
                   nativeButton={false}
                   className="flex h-14 items-center justify-center rounded-full bg-bone text-ink"
                 >
-                  Reserve a charter
+                  Plan a trip
                 </SheetClose>
               </div>
             </SheetContent>

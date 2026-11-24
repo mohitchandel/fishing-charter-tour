@@ -1,6 +1,6 @@
 # Hooked on Tours (fishing charters guide website)
 
-Marketing site for a Key West fishing charter business.
+An independent guide to booking a fishing charter in Key West, Florida. It doesn't sell trips or take bookings yet.
 Stack: Next.js 16 (App Router, TypeScript), Tailwind CSS 4, shadcn/ui (Base UI), Motion.
 
 ```bash
@@ -13,21 +13,35 @@ npm run build   # production build
 
 | What | Where |
 | --- | --- |
-| **All business content (mock data)**: name, phone, trips, prices, reviews, FAQ, photos | `src/lib/site.ts` |
+| Site name, contact email, trip types, FAQ, photos | `src/lib/site.ts` |
+| Guides and their sources | `src/lib/guides.ts` |
+| Season chart | `src/lib/seasons.ts` |
+| Policy pages | `src/app/{about,privacy,terms,disclosure,copyright}` |
 | Theme colours and fonts | `src/app/globals.css`, `src/app/layout.tsx` |
 | Home page sections | `src/components/site/*` |
 | Trip detail pages | `src/app/trips/[slug]/page.tsx` |
 | Viator booking widget | `src/components/site/viator-widget.tsx` |
 
-## Hooking up Viator
+## Content rules
 
-1. In the Viator Partner dashboard, create a booking widget and copy your **partner ID** and **widget ref**.
-2. Copy `.env.example` to `.env.local` and fill in both values, or put them straight into `viator` in `src/lib/site.ts`.
-3. For a different widget per trip, set `viatorWidgetRef` on that trip in `src/lib/site.ts`.
+- Nothing invented: no reviews, ratings, captains, boats or prices we can't prove. Every fact in a guide has a source.
+- Photos are stock images from Unsplash and must not be presented as a particular boat or trip.
+- Don't name the booking partner in public text until the partner account is approved.
 
-Until those values are set, every booking area shows a placeholder card with the phone number.
+## Contact email
 
-## Swapping in real content
+Set `site.email` in `src/lib/site.ts` to an address that can receive mail. Until then no address is shown.
+The privacy and copyright pages need it.
 
-Everything in `src/lib/site.ts` is placeholder content. Photos are Unsplash URLs. To use your own,
-drop files in `public/` and point the `image` fields at `/your-photo.jpg`.
+## Turning on booking
+
+Only after the partner account is approved:
+
+1. Create a booking widget in the Viator Partner dashboard and copy the **partner ID** and **widget ref**.
+2. Set `NEXT_PUBLIC_VIATOR_PARTNER_ID` and `NEXT_PUBLIC_VIATOR_WIDGET_REF` (see `.env.example`). For a different
+   widget per trip, set `viatorWidgetRef` on that trip in `src/lib/site.ts`.
+3. Read the privacy page and affiliate disclosure again, and update them for the partner.
+
+Viator's agreements say product information must not be indexable by search engines.
+
+Until both values are set, the booking areas say that online booking is coming soon.

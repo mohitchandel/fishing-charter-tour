@@ -21,9 +21,9 @@ export function DayAboard() {
       <div className="sticky top-0 flex h-[100svh] flex-col overflow-hidden pt-24 pb-8 md:pt-28">
         <div className="container-luxe flex items-end justify-between gap-6">
           <div>
-            <SectionLabel index="03">A typical day</SectionLabel>
+            <SectionLabel index="03">How a trip goes</SectionLabel>
             <h2 id="day-title" className="mt-5 text-[clamp(2rem,4vw,3.75rem)] leading-none font-light">
-              From first light to <span className="font-serif italic">fillets.</span>
+              From the dock and <span className="font-serif italic">back again.</span>
             </h2>
           </div>
           <div className="hidden w-56 md:block">
